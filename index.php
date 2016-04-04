@@ -1,7 +1,8 @@
 <?php
 get_header();
+get_template_part('nav','main');
 
-$lipsum = '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+$lipsum = '<b>Template Base</b> é um template pre moldado para criação de novos templates para wordpress. <br> Você pode saber mais no <a hre="https://github.com/BackFront/wp_basetheme">repositório</a> do projeto';
 
 echo $twig->render('index.phtml',array(
     'welcome_title' => "Olá mundo",
