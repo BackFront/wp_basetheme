@@ -29,4 +29,8 @@ require_once(UMB_TEMPLATE_PATH . UMB_AUTOLOAD);
 /* ================================
  * Global Instances ============ */
 $twigLoader = new Twig_Loader_Filesystem(UMB_TEMPLATE_PATH.UMB_VIEWS_PATH);
-global $twig; $twig = new Twig_Environment($twigLoader);
+$twig = new Twig_Environment($twigLoader);
+
+
+/* =======================================
+ * Register Styles/Scripts ============ */
