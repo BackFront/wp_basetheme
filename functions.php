@@ -96,5 +96,5 @@ if (!function_exists('umb_custom_title')) :
         return $title;
     }
 
-    add_filter('wp_title', 'twentyfourteen_wp_title', 10, 2);
+    add_filter('wp_title', 'umb_custom_title', 10, 2);
 endif;
