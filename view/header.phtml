@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html {{language_attributes}}>
   <head>
-    <meta charset="utf-8">
+    <meta charset="{{charset}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -12,5 +12,6 @@
     {% for style in styles %}
         <link href="{{style}}" rel="stylesheet">
     {% endfor %}
+    {{wp_head}}
   </head>
-  <body>
+  <body {{body_class}}>

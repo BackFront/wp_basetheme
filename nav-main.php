@@ -1,5 +1,6 @@
 <?php
 global $twig;
 echo $twig->render('nav-main.phtml',array(
-    'project_name' => "TemplateBase"
+    'site_title' => "TemplateBase",
+    'home_url' => esc_url( home_url( '/' ) ),
 ));
