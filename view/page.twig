@@ -1,0 +1,10 @@
+{% block before_container %}
+    <div class="container">
+        {% block content %}
+            <div class="starter-template">
+                <h1>{{ the_title }}</h1>
+                {{ the_content | raw }}
+            </div>
+        {% endblock %}
+    </div><!-- /.container -->
+{% endblock before_container %}

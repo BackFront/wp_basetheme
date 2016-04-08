@@ -1,5 +1,5 @@
 <?php
 global $twig;
-echo $twig->render('footer.phtml',array(
+echo $twig->render('footer.twig',array(
     "footer" => "Place sticky footer content here"
 ));
