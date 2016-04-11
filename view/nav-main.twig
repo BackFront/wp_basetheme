@@ -11,19 +11,10 @@
             <a class="navbar-brand" href="{{home_url}}">{{site_title}}</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            {{ nav_menu }}
-            <ul class="nav navbar-nav">
-                {{ action_before_nav_itens }}
-
-                {% for item in itens_menu %}
-                    <li class="{% for classe in item.classes %} {{ classe }} {% endfor %}" id="{{ item.id }}">
-                        <a href="{{ item.url }}" target="{{ item.target }}" class="{% for classe in item.classes %} {{ classe }} {% endfor %}">{{ item.title }}</a>
-                    </li>
-                {% endfor %}
-                {#                <li class="active"><a href="#">Home</a></li>#}
-                {{ action_after_nav_itens }}
-            </ul>
+            {{ action_before_nav | raw }}
+            {{ menu | raw }}
+            {{ action_after_nav | raw }}
         </div><!--/.nav-collapse -->
-        {{ action_after_nav_container }}
+        {{ action_after_nav_container | raw }}
     </div>
 </nav>

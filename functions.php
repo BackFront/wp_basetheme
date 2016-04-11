@@ -11,6 +11,7 @@
 define('UMB_VERSION', '0.0.0');
 define('UMB_MODULE_PATH', '/modules');
 define('UMB_VIEWS_PATH', '/view');
+define('UMB_INCLUDES_PATH', '/includes');
 define('UMB_AUTOLOAD', '/vendor/autoload.php');
 
 define('UMB_TEMPLATE_PATH', get_template_directory());
@@ -101,30 +102,10 @@ if (!function_exists('umb_custom_title')) :
     add_filter('wp_title', 'umb_custom_title', 10, 2);
 endif;
 
-/* =======================================
- * Menu itens ========================= */
-if (!function_exists('umb_get_menu_itens')):
-
-    function umb_get_menu_itens($menu_name) {
-        if (( $locations = get_nav_menu_locations() ) && isset($locations[$menu_name])) {
-            $menu = wp_get_nav_menu_object($locations[$menu_name]);
-            $menu_itens = wp_get_nav_menu_items($menu->term_id);
-            return get_current_item($menu_itens);
-        }
-    }
-
-    function get_current_item($itens) {
-        $menu_itens = [];
-        foreach ($itens as $item) {
-            $item_url = $item->url;
-            $current_url = home_url($_SERVER['REQUEST_URI']);
-            if ($item_url == $current_url){
-                array_push($item->classes, 'active');
-            }
-            array_push($menu_itens, $item);
-        }
-        return $menu_itens;
-    }
-
-
-endif;
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
+}
