@@ -1,5 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
+        {{ action_before_nav_container }}
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -10,11 +11,19 @@
             <a class="navbar-brand" href="{{home_url}}">{{site_title}}</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            {{ nav_menu }}
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                {{ action_before_nav_itens }}
+
+                {% for item in itens_menu %}
+                    <li class="{% for classe in item.classes %} {{ classe }} {% endfor %}" id="{{ item.id }}">
+                        <a href="{{ item.url }}" target="{{ item.target }}" class="{% for classe in item.classes %} {{ classe }} {% endfor %}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+                {#                <li class="active"><a href="#">Home</a></li>#}
+                {{ action_after_nav_itens }}
             </ul>
         </div><!--/.nav-collapse -->
+        {{ action_after_nav_container }}
     </div>
 </nav>

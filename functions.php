@@ -35,7 +35,7 @@ $twig = new Twig_Environment($twigLoader);
 if (!function_exists('umb_register_styles')):
 
     function umb_register_styles() {
-        //wp_enqueue_script("bootstrap", UMB_TEMPLATE_PATH . '/assets/css/bootstrap.css');
+//wp_enqueue_script("bootstrap", UMB_TEMPLATE_PATH . '/assets/css/bootstrap.css');
     }
 
     add_action('wp_enqueue_scripts', 'umb_register_styles');
@@ -48,21 +48,23 @@ if (!function_exists('umbella_theme_setup')) :
 
     function umbella_theme_setup() {
 
-        //Theme Supports
+//Theme Supports
         add_theme_support('post-thumbnails');
         add_theme_support('post-formats', array('aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery'));
         add_theme_support('custom-background', apply_filters('twentyfourteen_custom_background_args', array('default-color' => 'f5f5f5')));
 
-        //Images Size
+//Images Size
         add_image_size('twentyfourteen-full-width', 1038, 576, true);
 
-        //Thumbnail post size
-        ////Reister the size to post thumbnail
+//Thumbnail post size
+////Reister the size to post thumbnail
         set_post_thumbnail_size(1024, 768, true);
 
-        //Nav menus
-        ////Register the menus to all areas of to site
-        #register_nav_menus();
+//Nav menus
+////Register the menus to all areas of to site
+        register_nav_menus(array(
+            'umb_nav_main' => 'Menu principal do site',
+        ));
     }
 
     add_action('after_setup_theme', 'umbella_theme_setup');
@@ -97,4 +99,32 @@ if (!function_exists('umb_custom_title')) :
     }
 
     add_filter('wp_title', 'umb_custom_title', 10, 2);
+endif;
+
+/* =======================================
+ * Menu itens ========================= */
+if (!function_exists('umb_get_menu_itens')):
+
+    function umb_get_menu_itens($menu_name) {
+        if (( $locations = get_nav_menu_locations() ) && isset($locations[$menu_name])) {
+            $menu = wp_get_nav_menu_object($locations[$menu_name]);
+            $menu_itens = wp_get_nav_menu_items($menu->term_id);
+            return get_current_item($menu_itens);
+        }
+    }
+
+    function get_current_item($itens) {
+        $menu_itens = [];
+        foreach ($itens as $item) {
+            $item_url = $item->url;
+            $current_url = home_url($_SERVER['REQUEST_URI']);
+            if ($item_url == $current_url){
+                array_push($item->classes, 'active');
+            }
+            array_push($menu_itens, $item);
+        }
+        return $menu_itens;
+    }
+
+
 endif;
