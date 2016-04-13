@@ -37,7 +37,7 @@ $twig = new Twig_Environment($twigLoader);
 if (!function_exists('umb_register_styles')):
 
     function umb_register_styles() {
-//wp_enqueue_script("bootstrap", UMB_TEMPLATE_PATH . '/assets/css/bootstrap.css');
+        //wp_enqueue_script("bootstrap", UMB_TEMPLATE_PATH . '/assets/css/bootstrap.css');
     }
 
     add_action('wp_enqueue_scripts', 'umb_register_styles');
@@ -103,10 +103,11 @@ if (!function_exists('umb_custom_title')) :
     add_filter('wp_title', 'umb_custom_title', 10, 2);
 endif;
 
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-function special_nav_class($classes, $item){
-     if( in_array('current-menu-item', $classes) ){
-             $classes[] = 'active ';
-     }
-     return $classes;
+add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
+
+function special_nav_class($classes, $item) {
+    if (in_array('current-menu-item', $classes)) {
+        $classes[] = 'active ';
+    }
+    return $classes;
 }
