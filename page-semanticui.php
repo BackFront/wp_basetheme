@@ -16,7 +16,7 @@
 
 /** Call external pages * */
 get_header();
-//get_template_part('nav', 'main');
+the_post();
 
 /** Render Page * */
 echo $twig->render('page-semanticui.twig', array(

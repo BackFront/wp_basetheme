@@ -27,7 +27,8 @@ define('UMB_TEMPLATE_URI', get_template_directory_uri());
 
 //Autoload
 require_once(UMB_TEMPLATE_PATH . UMB_AUTOLOAD);
-require_once(UMB_TEMPLATE_PATH . UMB_INCLUDES_PATH . "/class_menu.php");
+require_once(UMB_TEMPLATE_PATH . UMB_INCLUDES_PATH . "/BootstrapNavMenuWalker.php");
+require_once(UMB_TEMPLATE_PATH . UMB_INCLUDES_PATH . "/SemanticUiNavMenuWalker.php");
 
 
 /* ================================
