@@ -1,15 +1,8 @@
 <?php
-/**
- * Extended Walker class for use with the
- * Twitter Bootstrap toolkit Dropdown menus in Wordpress.
- * Edited to support n-levels submenu.
- * @author johnmegahan https://gist.github.com/1597994, Emanuele 'Tex' Tessore https://gist.github.com/3765640
- * @license CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
- */
 class BootstrapNavMenuWalker extends Walker_Nav_Menu {
-	function start_lvl( &$output, $depth ) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$submenu = ($depth > 0) ? ' sub-menu' : '';
+		$submenu = ($depth > 0) ? ' dropdown' : '';
 		$output	   .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\">\n";
 	}
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {

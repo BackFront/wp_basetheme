@@ -8,11 +8,11 @@
     <meta name="author" content="">
 
     <title>{{title}}</title>
-    {% for style in styles %}
-        <link href="{{style}}" rel="stylesheet">
-    {% endfor %}
     {% for script in scripts %}
         <script type="text/javascript" src="{{ script }}"></script>
+    {% endfor %}
+    {% for style in styles %}
+        <link href="{{style}}" rel="stylesheet">
     {% endfor %}
   </head>
   <body>

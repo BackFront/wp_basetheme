@@ -11,7 +11,5 @@ echo $twig->render('header.twig', array(
         UMB_TEMPLATE_URI . '/assets/css/bootstrap-theme.min.css',
         UMB_TEMPLATE_URI . '/assets/css/mainstyle.css'
     ),
-    "scripts" => array(
-        UMB_TEMPLATE_URI . '/assets/js/bootstrap.js'
-    ),
+    "scripts" => array(),
 ));

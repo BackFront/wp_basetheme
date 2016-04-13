@@ -8,7 +8,8 @@ global $twig;
 $menu_args = array(
     'echo' => false,
     'container' => null,
-    'menu_class' => "nav navbar-nav"
+    'menu_class' => "nav navbar-nav",
+    'walker' => new BootstrapNavMenuWalker()
 );
 
 /**

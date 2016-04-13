@@ -3,5 +3,9 @@
                 <p class="text-muted">{{footer}}</p>
             </div>
         </footer>
+        {% for script in scripts %}
+            <script type="text/javascript" src="{{ script }}"></script>
+        {% endfor %}
+      </script>
     </body>
 </html>
