@@ -1,7 +1,7 @@
 {
     "name": "backfront/wp_basetheme",
     "description": "Thema base para criar novos themas",
-    "homepage": "http://snddigitall.com.br",
+    "homepage": "http://alvesdouglas.com.br",
     "keywords": [
         "plugin",
         "wordpress",
@@ -10,9 +10,15 @@
     "authors": [
         {
             "name": "Douglas Alves",
-            "email": "alves.douglaz@gmail.com"
+            "email": "alves.douglaz@gmail.com",
+            "homepage": "http://alvesdouglas.com.br/",
+            "role": "Creator"
         }
     ],
+    "support": {
+        "issues": "https://github.com/issue/wp_basetheme/",
+        "source": "https://github.com/BackFront/wp_basetheme/"
+    },
     "require": {
         "twig/twig": "^1.24",
         "php": ">=5.3.0"
@@ -20,7 +26,7 @@
     "autoload": {
         "psr-4": {
             "Umbrella\\": "src/Umbrella/",
-            "Controllers\\" : "src/App/Controllers/"
+            "Controllers\\": "src/App/Controllers/"
         }
     }
 }
