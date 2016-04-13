@@ -11,9 +11,10 @@
  * @since 1.0
  */
 global $twig;
-echo $twig->render('footer.twig', array(
+echo $twig->render('footer-semanticui.twig', array(
     "scripts" => array(
         'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js',
+        UMB_TEMPLATE_URI . '/assets/libs/semantic_ui/semantic.min.js',
         UMB_TEMPLATE_URI . '/assets/js/mainscript.js'
     ),
 ));

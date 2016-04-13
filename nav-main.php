@@ -1,8 +1,16 @@
 <?php
-
 /**
- * Options / Values
+ * @package Umbrella 
+ * @subpackage wp_basetheme
+ * @version 1.0.0
+ * 
+ * @author Douglas Alves <alves.douglaz@gmail.com>
+ * @link http://https://github.com/BackFront/wp_basetheme/ Project Repository
+ * @license http://www.apache.org/licenses/LICENSE-2.0/ Apache License 2.0
+ * @since 1.0
  */
+
+/** Options / Values **/
 global $twig;
 
 $menu_args = array(
@@ -12,9 +20,7 @@ $menu_args = array(
     'walker' => new BootstrapNavMenuWalker()
 );
 
-/**
- * Render Page
- */
+/** Render Page **/
 echo $twig->render('nav-main.twig', array(
     'site_title' => "TemplateBase",
     'home_url' => esc_url(home_url('/')),
@@ -25,8 +31,6 @@ echo $twig->render('nav-main.twig', array(
     'menu' => wp_nav_menu($menu_args)
 ));
 
-/**
- * Testes / Debug
- */
+/** Tests / Debugs **/
 
 //var_dump(umb_get_menu_itens($menu_name));

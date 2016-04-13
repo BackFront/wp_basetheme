@@ -8,4 +8,4 @@ echo $twig->render('page.twig',array(
     'the_content' => get_the_content(),
 ));
 
-get_footer();
+get_footer('bootstrap');

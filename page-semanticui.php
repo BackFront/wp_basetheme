@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Page Jombotron
- * 
+ * Template Name: Page Semantic-UI
+ *
  * @package Umbrella 
  * @subpackage wp_basetheme
  * @version 1.0.0
@@ -11,13 +11,19 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0/ Apache License 2.0
  * @since 1.0
  */
-get_header();
-the_post();
-get_template_part('nav','main');
 
-echo $twig->render('page-jombotron.twig',array(
-    'the_title' => get_the_title(),
-    'the_content' => get_the_content(),
+/** Options / Values * */
+
+/** Call external pages * */
+get_header();
+//get_template_part('nav', 'main');
+
+/** Render Page * */
+echo $twig->render('page-semanticui.twig', array(
+    
 ));
 
-get_footer('bootstrap');
+/** Tests / Debugs * */
+
+/** Call external pages after render * */
+get_footer('semanticui');

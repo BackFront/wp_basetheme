@@ -1,8 +1,4 @@
-        <footer class="footer">
-            <div class="container">
-                <p class="text-muted">{{footer}}</p>
-            </div>
-        </footer>
+        {% block block_footer %}{% endblock %}
         {% for script in scripts %}
             <script type="text/javascript" src="{{ script }}"></script>
         {% endfor %}
