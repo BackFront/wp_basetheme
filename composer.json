@@ -5,8 +5,11 @@
     "keywords": [
         "plugin",
         "wordpress",
-        "modular"
+        "modular",
+        "default",
+        "theme"
     ],
+    "license" : "Apache License 2.0",
     "authors": [
         {
             "name": "Douglas Alves",
